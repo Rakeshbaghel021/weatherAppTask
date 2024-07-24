@@ -37,7 +37,7 @@ function App() {
     setLoadings(isAnyChildLoading);
   }, [allLoadings]);
 
-  // fetch data
+  // fetch  All data
 
   const fetchData = () => {
     dispatch(
@@ -116,7 +116,7 @@ function App() {
                 aria-hidden="true"
                 className="-ml-0.5 h-5 w-5 text-gray-300"
               />
-              <p className="-ml-0.5 h-5 w-5 text-white ">Go</p>
+              <p className="-ml-0.5 h-5 w-5 text-white">Go</p>
             </button>
           </div>
         </form>
@@ -134,7 +134,7 @@ function App() {
         ) : (
           <>
             {citySearchData && citySearchData.error ? (
-              <div className="error-msg">{citySearchData.error}</div>
+              <div className="error-msg">{"Invalid City Name"}</div>
             ) : (
               <>
                 {forecastError ? (
@@ -144,7 +144,7 @@ function App() {
                     {citySearchData && citySearchData.data ? (
                       <div className="p-6 flex flex-col md:flex-row rounded-md shadow-sm">
                         <div
-                          className="flex-grow items-stretch focus-within:z-10  p-6 rounded-md shadow-sm bg-gray-300"
+                          className="flex-grow items-stretch focus-within:z-10  p-6 rounded-md shadow-sm bg-gray-400"
                           style={{
                             background:
                               "linear-gradient(to bottom, #ffffff, #d1d5db)",
@@ -173,7 +173,7 @@ function App() {
                               </p>
                             </div>
                             <div
-                              className="shadow-md w-full md:w-1/2 p-2 rounded bg-gray-300"
+                              className="shadow-md w-full md:w-1/2 p-2 rounded bg-gray-400"
                               style={{
                                 background:
                                   "linear-gradient(to bottom, #ffffff, #d1d5db)",
@@ -243,7 +243,7 @@ function App() {
                       <div className="error-msg">No Data Found</div>
                     )}
 
-                    {/* extended forecastData */}
+                    {/* extended forecastData for 5 days */}
 
                     {filteredForecast.length > 0 ? (
                       <div className="pl-6  pr-6 pb-6 flex rounded-md shadow-sm ">
@@ -280,7 +280,11 @@ function App() {
                                         {data.main.temp_max}&deg; C /{" "}
                                         {data.main.temp_min}&deg; C
                                       </p>
+                                      <p className="text-sm font-semibold text-gray-900">
+                                        {"max"}&deg; C {"min"}&deg; C
+                                      </p>
                                     </dd>
+
                                     <div className="text-2xl mt-4">
                                       <p className="font-semibold text-indigo-600 hover:text-indigo-500 text-center">
                                         {day}
