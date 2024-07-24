@@ -6,6 +6,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ![City Details Page](src/assets/cityweatherdetails.png)
 
+![City Details MobilePage](src/assets/mobileview1.png)
+
+![City Details MobilePage](src/assets/mobileview2.png)
+
 ## Available Scripts
 
 In the project directory, you can run:
