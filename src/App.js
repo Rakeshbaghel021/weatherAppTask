@@ -143,12 +143,18 @@ function App() {
                   <>
                     {citySearchData && citySearchData.data ? (
                       <div className="p-6 flex flex-col md:flex-row rounded-md shadow-sm">
-                        <div className="flex-grow items-stretch focus-within:z-10 bg-gray-200 p-6 rounded-md shadow-sm">
+                        <div
+                          className="flex-grow items-stretch focus-within:z-10  p-6 rounded-md shadow-sm bg-gray-300"
+                          style={{
+                            background:
+                              "linear-gradient(to bottom, #ffffff, #d1d5db)",
+                          }}
+                        >
                           <h2 className="text-gray-500 text-2xl">
                             Current Weather
                           </h2>
                           <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4 p-4">
-                            <div className="shadow-md w-full md:w-1/2 p-2 h-72">
+                            <div className="shadow-md w-full md:w-1/2 p-2 h-72 rounded">
                               <p className="text-blue-700 text-lg font-semibold flex gap-3 items-center">
                                 <FaLocationDot className="w-8 h-8 text-gray-600" />{" "}
                                 <span>{citySearchData.data.name}</span>
@@ -166,9 +172,15 @@ function App() {
                                 {citySearchData.data.weather[0].description}
                               </p>
                             </div>
-                            <div className="shadow-md w-full md:w-1/2 p-2 ">
-                              <div>
-                                <p className=" text-lg font-semibold flex gap-4">
+                            <div
+                              className="shadow-md w-full md:w-1/2 p-2 rounded bg-gray-300"
+                              style={{
+                                background:
+                                  "linear-gradient(to bottom, #ffffff, #d1d5db)",
+                              }}
+                            >
+                              <div className="lg:pl-44 pl-16">
+                                <p className=" text-lg font-semibold flex gap-4 ">
                                   <span>
                                     <FaTemperatureHigh className="w-8 h-8 text-gray-600" />{" "}
                                   </span>
@@ -179,21 +191,21 @@ function App() {
                                   <span className="text-blue-700">&deg;C</span>
                                 </p>
                                 <div className="justify-center items-center">
-                                  <div className="mt-6 flex w-full flex-none gap-x-4 border-t border-gray-900/5 px-6 pt-6">
+                                  <div className="mt-6 flex w-full flex-none gap-x-4  px-6 pt-6">
                                     <dt className="flex-none">
                                       <WiHumidity
                                         aria-hidden="true"
                                         className="h-8 w-8 text-gray-400"
                                       />
                                     </dt>
-                                    <dd className="text-sm font-medium leading-6 text-gray-900">
+                                    <dd className="text-sm font-medium  text-gray-900">
                                       <span className="mr-4">Humidity</span>
                                       <span className="text-blue-500 ml-6">
                                         {citySearchData.data.main.humidity}%
                                       </span>
                                     </dd>
                                   </div>
-                                  <div className="mt-6 flex w-full flex-none gap-x-4 border-t border-gray-900/5 px-6 pt-6">
+                                  <div className="mt-6 flex w-full flex-none gap-x-4  px-6 pt-6">
                                     <dt className="flex-none">
                                       <FaWind
                                         aria-hidden="true"
@@ -203,11 +215,11 @@ function App() {
                                     <dd className="text-sm font-medium leading-6 text-gray-900">
                                       <span className="mr-4">Wind</span>
                                       <span className="text-blue-500 ml-12">
-                                        {citySearchData.data.wind.speed}kph
+                                        {citySearchData.data.wind.speed} kph
                                       </span>
                                     </dd>
                                   </div>
-                                  <div className="mt-6 flex w-full flex-none gap-x-4 border-t border-gray-900/5 px-6 pt-6">
+                                  <div className="mt-6 flex w-full flex-none gap-x-4  px-6 pt-6">
                                     <dt className="flex-none">
                                       <TbActivityHeartbeat
                                         aria-hidden="true"
@@ -241,14 +253,14 @@ function App() {
                           </h2>
                           <div>
                             <dl className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5">
-                              {filteredForecast.map((data, index) => {
+                              {filteredForecast.map((data, id) => {
                                 const date = new Date(data.dt_txt);
                                 const day = date.toLocaleDateString("en-US", {
                                   weekday: "short",
                                 });
                                 return (
                                   <div
-                                    key={data.id}
+                                    key={id}
                                     className="relative overflow-hidden rounded-lg bg-white px-4 pb-12 pt-5 shadow sm:px-6 sm:pt-9 hover:bg-gray-300 cursor-pointer scale-100 transition-transform duration-500 ease-in-out hover:scale-95"
                                   >
                                     <dt>
