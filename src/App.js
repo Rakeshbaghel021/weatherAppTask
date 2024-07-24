@@ -181,7 +181,7 @@ function App() {
                               }}
                             >
                               <div className="lg:pl-44 pl-16">
-                                <p className=" text-lg font-semibold flex gap-4 ">
+                                <p className=" text-lg font-semibold flex gap-4 mt-2">
                                   <span>
                                     <FaTemperatureHigh className="w-8 h-8 text-gray-600" />{" "}
                                   </span>
