@@ -277,10 +277,10 @@ function App() {
                                     </dt>
                                     <dd className="ml-16 flex items-baseline pb-6 sm:pb-7">
                                       <p className="text-sm font-semibold text-gray-900">
-                                        {data.main.temp_max}&deg; C /{" "}
+                                        {data.main.temp_max}&deg; C{" "}
                                         {data.main.temp_min}&deg; C
                                       </p>
-                                      <p className="text-sm font-semibold text-gray-900">
+                                      <p className="text-sm font-semibold text-green-700">
                                         {"max"}&deg; C {"min"}&deg; C
                                       </p>
                                     </dd>
