@@ -82,6 +82,18 @@ function App() {
   useEffect(() => {
     fetchData();
   }, []);
+  const getWeatherBackground = (description) => {
+    if (description.includes("cloud")) {
+      return "bg-cloudy";
+    } else if (description.includes("rain")) {
+      return "bg-rainy";
+    } else if (description.includes("cold")) {
+      return "bg-coldy";
+    } else if (description.includes("mist")) {
+      return "bg-misty";
+    }
+    return "bg-sunny";
+  };
 
   return (
     <div
@@ -155,7 +167,11 @@ function App() {
                             Current Weather
                           </h2>
                           <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4 p-4">
-                            <div className="shadow-md w-full md:w-1/2 p-2 h-72 rounded">
+                            <div
+                              className={`shadow-md w-full md:w-1/2 p-2 h-72 rounded ${getWeatherBackground(
+                                citySearchData.data.weather[0].description
+                              )}`}
+                            >
                               <p className="text-blue-700 text-lg font-semibold flex gap-3 items-center">
                                 <FaLocationDot className="w-8 h-8 text-gray-600" />{" "}
                                 <span>{citySearchData.data.name}</span>

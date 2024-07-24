@@ -14,3 +14,23 @@
   border: 1px solid transparent;
   border-radius: 0.25rem;
 }
+.bg-cloudy {
+  background: url("https://media.istockphoto.com/id/1193215395/photo/dark-stormy-clouds-for-background.jpg?s=612x612&w=0&k=20&c=tz57RqAg_0ovOo_OJQWAFwcUujHQ8kHKuZW9B9io01c=")
+    no-repeat center center/cover;
+}
+.bg-rainy {
+  background: url("https://thumbs.dreamstime.com/b/transparent-umbrella-under-rain-against-water-drops-splash-background-rainy-weather-concept-191493424.jpg")
+    no-repeat center center/cover;
+}
+.bg-sunny {
+  background: url("https://i.pinimg.com/736x/af/d3/ef/afd3efd404a39a2b46870aa37717d0b1.jpg")
+    no-repeat center center/cover;
+}
+.bg-coldy {
+  background: url("https://png.pngtree.com/background/20210715/original/pngtree-cold-winter-day-snow-winter-forest-snow-background-picture-image_1293760.jpg")
+    no-repeat center center/cover;
+}
+.bg-misty {
+  background: url("https://s3.envato.com/files/07f7227a-e5bd-4272-823f-2439c50785cc/inline_image_preview.jpg")
+    no-repeat center center/cover;
+}
