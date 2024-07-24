@@ -24,12 +24,14 @@ function App() {
   } = useSelector((state) => state.weather);
 
   const [city, setCity] = useState("");
+
+  // unit for make degree celsius
   const unit = "metric";
 
   // main loadings state
   const [loadings, setLoadings] = useState(true);
 
-  // check if any of redux loading state is still true
+  //  redux loading state is still true
   const allLoadings = [citySearchLoading, forecastLoading];
 
   useEffect(() => {
@@ -66,7 +68,6 @@ function App() {
     fetchData();
   };
 
-  // function to filter forecast data based on the time of the first object
   const filterForecastByFirstObjTime = (forecastData) => {
     if (!forecastData) {
       return [];
@@ -277,7 +278,7 @@ function App() {
                                     </dt>
                                     <dd className="ml-16 flex items-baseline pb-6 sm:pb-7">
                                       <p className="text-sm font-semibold text-gray-900">
-                                        {data.main.temp_max}&deg; C{" "}
+                                        {data.main.temp_max}&deg; C
                                         {data.main.temp_min}&deg; C
                                       </p>
                                       <p className="text-sm font-semibold text-green-700">
